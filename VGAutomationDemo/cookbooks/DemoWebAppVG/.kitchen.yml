@@ -4,6 +4,7 @@ driver:
 
 provisioner:
   name: chef_zero
+  always_update_cookbooks: false
 
 verifier:
   name: inspec
@@ -15,4 +16,7 @@ suites:
   - name: default
     run_list:
       - role[web]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
     attributes:
