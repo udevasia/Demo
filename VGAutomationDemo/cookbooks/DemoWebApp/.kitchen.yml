@@ -1,0 +1,23 @@
+---
+driver:
+  name: ec2  
+  instance_type: t2.micro  
+  retryable_tries: 120
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: amz-img
+
+suites:
+  - name: default
+    run_list:
+      - role[web]
+    verifier:
+      inspec_tests:
+        - test/smoke/default
+    attributes:
