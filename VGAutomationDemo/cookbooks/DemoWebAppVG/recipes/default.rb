@@ -1,4 +1,5 @@
 package 'httpd'
+package 'unzip'
 
 service 'httpd' do
   action [:enable, :start]
@@ -22,3 +23,5 @@ end
 package node['common']['editor'] do
 	action :install
 end
+
+include_recipe '::install_awscli'
