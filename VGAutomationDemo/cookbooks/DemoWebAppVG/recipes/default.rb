@@ -6,7 +6,7 @@ end
 
 group node['service']['group']
 
-user node['service']['owner'].to_s do
+user node['service']['owner'] do
   group node['service']['group']
   system true
   shell '/bin/bash'
@@ -17,4 +17,8 @@ template '/var/www/html/index.html' do
   mode node['service']['mode']
   owner node['service']['owner']
   group node['service']['group']
+end
+
+package node['common']['editor'] do
+	action :install
 end

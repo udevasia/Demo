@@ -18,3 +18,12 @@ end
 describe port(80) do
   it { should be_listening }
 end
+
+describe service('chef-client') do
+  it { should be_enabled }
+  it { should be_running }
+end
+
+describe package('vim-enhanced') do
+	it { should be_installed }
+end
