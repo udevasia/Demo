@@ -7,7 +7,7 @@ end
 group node['service']['group']
 
 user node['service']['owner'] do
-  group ['service']['group']
+  group node['service']['group']
   system true
   shell '/bin/bash'
 end
