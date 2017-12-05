@@ -1,5 +1,11 @@
 <html>
   <body>
-    <h1>My FQDN is <%= node['fqdn']%></h1>
+    <h1>My FQDN is <%= node['fqdn']%></h1></br>
+	<h2>My platform is <%= node['platform']%></h2></br>
+	<h2>My IPAddress is <%= node['ipaddress']%></h2></br>
+	<h2>My hostname is <%= node['hostname']%></h2></br>
+	<h2>My domain is <%= node['domain']%></h2></br>
+	<h2>My role is <%= node['role']%></h2></br>
+	<h2>My recipes is <%= node['recipes']%></h2></br>
   </body>
 </html>
