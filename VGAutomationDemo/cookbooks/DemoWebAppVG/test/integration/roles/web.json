@@ -7,7 +7,7 @@
    "override_attributes": {
    },
    "chef_type": "role",
-   "run_list": ["recipe[DemoWebApp::default]"],
+   "run_list": ["recipe[DemoWebAppVG::default]"],
    "env_run_lists": {
    }
 }
