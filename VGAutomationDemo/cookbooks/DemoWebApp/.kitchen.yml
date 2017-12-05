@@ -1,8 +1,6 @@
 ---
 driver:
-  name: ec2  
-  instance_type: t2.micro  
-  retryable_tries: 120
+  name: vagrant
 
 provisioner:
   name: chef_zero
@@ -11,13 +9,10 @@ verifier:
   name: inspec
 
 platforms:
-  - name: amz-img
+  - name: centos-7
 
 suites:
   - name: default
     run_list:
       - role[web]
-    verifier:
-      inspec_tests:
-        - test/smoke/default
     attributes:
