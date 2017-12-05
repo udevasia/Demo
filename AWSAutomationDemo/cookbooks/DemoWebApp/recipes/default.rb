@@ -4,17 +4,17 @@ service 'httpd' do
   action [:enable, :start]
 end
 
-group 'web_admin'
+group node['service']['group']
 
-user 'web_admin' do
-  group 'web_admin'
+user node['service']['owner'] do
+  group ['service']['group']
   system true
   shell '/bin/bash'
 end
 
 template '/var/www/html/index.html' do
   source 'index.html.erb'
-  mode '0644'
-  owner 'web_admin'
-  group 'web_admin'
+  mode node['service']['mode']
+  owner node['service']['owner']
+  group node['service']['group']
 end
